@@ -8,3 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 export function f32(buf: number[]) {
   return Buffer.from(Float32Array.from(buf).buffer);
 }
+
+// Buffer -> Float32Array
+export const bufToF32 = (b: Buffer) =>
+  new Float32Array(b.buffer, b.byteOffset, b.byteLength / 4);

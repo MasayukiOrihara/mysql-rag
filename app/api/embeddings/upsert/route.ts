@@ -1,7 +1,7 @@
 import { embeddings } from "@/lib/embedding";
 import { UNKNOWN_ERROR } from "@/lib/error";
+import { conn } from "@/lib/mysql";
 import { f32 } from "@/lib/utils";
-import mysql from "mysql2/promise";
 
 export async function POST(req: Request) {
   try {
@@ -9,15 +9,6 @@ export async function POST(req: Request) {
     const text = body.text;
 
     console.log("✏ text: " + text);
-
-    // mysql 接続
-    const conn = await mysql.createConnection({
-      host: "localhost",
-      port: 3306,
-      user: "root",
-      password: "rootpass",
-      database: "ragdb",
-    });
 
     // 入力テキスト
     const content = text;
