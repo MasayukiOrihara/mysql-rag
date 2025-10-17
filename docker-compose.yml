@@ -1,0 +1,15 @@
+services:
+  mysql9:
+    image: mysql:9.0
+    container_name: mysql9
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: ragdb
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: apppass
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+      - ./init:/docker-entrypoint-initdb.d # 初期テーブル
+    command: []
