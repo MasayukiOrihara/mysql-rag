@@ -9,7 +9,7 @@ export default function TextInput() {
     e.preventDefault();
     const tempText = text.trim();
 
-    fetch("/api/embeddings/upsert", {
+    fetch("/api/mysql8/embeddings/upsert", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

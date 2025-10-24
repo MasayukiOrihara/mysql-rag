@@ -8,3 +8,12 @@ export const conn = await mysql.createConnection({
   password: "rootpass",
   database: "ragdb",
 });
+
+export const pool = mysql.createPool({
+  host: "localhost",
+  user: "appuser",
+  password: "apppass",
+  database: "ragdb",
+  port: 3306,
+  connectionLimit: 5,
+});

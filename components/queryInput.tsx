@@ -9,7 +9,7 @@ export default function QueryInput() {
     e.preventDefault();
     const tempText = text.trim();
 
-    fetch("/api/embeddings/query", {
+    fetch("/api/mysql8/embeddings/query", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
